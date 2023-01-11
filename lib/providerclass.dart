@@ -79,7 +79,6 @@ class LivelocationWeatherProvider with ChangeNotifier {
     if (responce.statusCode == 200) {
       notifyListeners();
       var body = json.decode(responce.body);
-
       location = body['city']['name'];
       temp = body['list'][0]['temp']['day'];
       humidity = body["list"][0]['humidity'].toString();
